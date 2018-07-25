@@ -2,19 +2,24 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'
 
+import { AuthService } from './auth/auth.service';
+import { ProductService } from './products/product.service'
+import { CartService } from './cart/cart.service'
+
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
 import { CategoriesComponent } from './categories/categories.component';
-
-import { AuthService } from './auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProductsComponent } from './products/products.component'
+import { ProductsComponent } from './products/products.component';
+import { CartComponent } from './cart/cart.component'
+
 
 
 const appRoutes: Routes = [
   { path: 'login', component: AuthComponent },
   { path: 'logout',component: AuthComponent },
+  { path: 'cart', component: CartComponent },
   { path: '', component: DashboardComponent}
   //{ path: '**', component: PageNotFoundComponent }
 ];
@@ -27,7 +32,8 @@ const appRoutes: Routes = [
     AuthComponent,
     CategoriesComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    CartComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -36,7 +42,7 @@ const appRoutes: Routes = [
     ),
     BrowserModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

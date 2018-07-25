@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service'
+
+import { AuthService } from '../auth/auth.service'
+import { CartService } from '../cart/cart.service'
 
 @Component({
   selector: 'app-nav',
@@ -8,7 +10,7 @@ import { AuthService } from '../auth.service'
 })
 export class NavComponent implements OnInit {
 
-  constructor(public auth:AuthService) { }
+  constructor(public auth:AuthService, public cart:CartService) { }
 
   ngOnInit() {
   }

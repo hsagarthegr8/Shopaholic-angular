@@ -1,15 +1,15 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-	<a class="navbar-brand" href="#">Shopaholic</a>
+	<a class="navbar-brand" routerLink=''>Shopaholic</a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 	<div class="collapse navbar-collapse" id="navbarCollapse">
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
+				<a class="nav-link">Link</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Disabled</a>
+				<a class="nav-link disabled">Disabled</a>
 			</li>
 		</ul>
 		<form class="form-inline mr-auto">
@@ -27,7 +27,7 @@
 				<a class="nav-link" >Welcome, <ng-template [ngIf]='auth.getAuthenticated()' [ngIfElse]='unauthenticated'>{{auth.username}}</ng-template><ng-template #unauthenticated>Guest</ng-template></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" ><i class="fas fa-shopping-cart"></i></a>
+				<a class="nav-link" routerLink='/cart'><i class="fas fa-shopping-cart"><sup class="badge badge-info" *ngIf="cart.productsInCart.length">{{ cart.productsInCart.length }}</sup></i></a>
 			</li>
 			<ng-template [ngIf]='auth.getAuthenticated()' [ngIfElse]='login'>
 				<li class="nav-item">
