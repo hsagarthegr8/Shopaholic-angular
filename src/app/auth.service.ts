@@ -7,6 +7,7 @@ import {Router} from '@angular/router'
 export class AuthService {
 	private isAuthenticated:boolean
 	username:string
+
 	constructor(private route:Router) { 
 		this.isAuthenticated = false
 	}
@@ -19,7 +20,6 @@ export class AuthService {
 		this.username = username
 		this.isAuthenticated = true
 		this.route.navigate([''])
-
 	}
 
 	logOut():void {

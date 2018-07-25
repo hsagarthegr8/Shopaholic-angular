@@ -7,12 +7,15 @@ import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
 import { CategoriesComponent } from './categories/categories.component';
 
-import { AuthService } from './auth.service'
+import { AuthService } from './auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProductsComponent } from './products/products.component'
 
 
 const appRoutes: Routes = [
   { path: 'login', component: AuthComponent },
   { path: 'logout',component: AuthComponent },
+  { path: '', component: DashboardComponent}
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
@@ -22,7 +25,9 @@ const appRoutes: Routes = [
     AppComponent,
     NavComponent,
     AuthComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    DashboardComponent,
+    ProductsComponent
   ],
   imports: [
     RouterModule.forRoot(
