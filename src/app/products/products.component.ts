@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router'
 import { Product } from './product.interface'
 
 import { CartService } from '../cart/cart.service'
+import { AuthService } from '../auth/auth.service'
 
 @Component({
   selector: 'app-products',
@@ -44,12 +45,15 @@ export class ProductsComponent implements OnInit {
     },
 
   ]
-  constructor(private cart:CartService) { }
+  constructor(private router:Router, private cart:CartService, private auth:AuthService) { }
 
   ngOnInit() {
   }
 
   addToCart(product:Product) {
-    this.cart.addToCart(product)
+    if(!this.auth.getAuthenticated()) 
+      this.router.navigate(['login'])
+    else 
+      this.cart.addToCart(product)
   }
 }

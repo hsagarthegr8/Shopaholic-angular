@@ -27,7 +27,7 @@
 				<a class="nav-link" >Welcome, <ng-template [ngIf]='auth.getAuthenticated()' [ngIfElse]='unauthenticated'>{{auth.username}}</ng-template><ng-template #unauthenticated>Guest</ng-template></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" routerLink='/cart'><i class="fas fa-shopping-cart"><sup class="badge badge-info" *ngIf="cart.productsInCart.length">{{ cart.productsInCart.length }}</sup></i></a>
+				<a class="nav-link" routerLink='/cart'><i class="fas fa-shopping-cart"><sup class="badge badge-info" *ngIf="cart.numProductsInCart">{{ cart.numProductsInCart }}</sup></i></a>
 			</li>
 			<ng-template [ngIf]='auth.getAuthenticated()' [ngIfElse]='login'>
 				<li class="nav-item">

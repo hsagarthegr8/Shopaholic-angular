@@ -1,3 +1,26 @@
-<p>
-  cart works!
-</p>
+<div class="row">
+	<div class="col-sm-8">
+	<div class="card product-list" *ngFor = 'let product of cart.productsInCartArray'>
+		<div class="row">
+			<div class="col-sm-3">
+				<img [src] = 'product.imgUrl' [alt]='product.name'>
+			</div>
+			<div class="col-sm-9">
+				<div class="card-body">
+					<h4 class="card-title">{{ product.name }}</h4>
+					<p class="card-text">
+						{{ product.price|currency:'INR':true:'1.0-0' }}
+						<button class="btn btn-danger"  (click)="removeFromCart(product)">
+							<i class="fa fa-times-circle"></i> 
+							Remove from Cart
+						</button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<div class="col-sm-4">
+		Total
+	</div>
+</div>
