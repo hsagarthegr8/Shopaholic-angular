@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.price {
+    font-size:2em;
+}
+
+.product-image {
+    padding: 1em;
+    max-width: 8em;
+    height:auto;
+}
+

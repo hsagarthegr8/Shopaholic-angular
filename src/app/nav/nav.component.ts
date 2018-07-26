@@ -14,5 +14,9 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  logOut() {
+    this.auth.logOut()
+  }
 
 }
